@@ -1,8 +1,8 @@
-/home/da01/MyLife/apps/GEMS/Exceptionize_Log/spec/file/config.ru:1:in `block in <main>': uninitialized constant A (NameError)
+/home/da01/MyLife/apps/GEMS/Exceptional_Log/spec/file/config.ru:1:in `block in <main>': uninitialized constant A (NameError)
 	from /home/da01/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/rack-1.4.1/lib/rack/builder.rb:51:in `instance_eval'
 	from /home/da01/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/rack-1.4.1/lib/rack/builder.rb:51:in `initialize'
-	from /home/da01/MyLife/apps/GEMS/Exceptionize_Log/spec/file/config.ru:1:in `new'
-	from /home/da01/MyLife/apps/GEMS/Exceptionize_Log/spec/file/config.ru:1:in `<main>'
+	from /home/da01/MyLife/apps/GEMS/Exceptional_Log/spec/file/config.ru:1:in `new'
+	from /home/da01/MyLife/apps/GEMS/Exceptional_Log/spec/file/config.ru:1:in `<main>'
 	from /home/da01/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/thin-1.3.1/lib/rack/adapter/loader.rb:36:in `eval'
 	from /home/da01/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/thin-1.3.1/lib/rack/adapter/loader.rb:36:in `load'
 	from /home/da01/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/thin-1.3.1/lib/rack/adapter/loader.rb:45:in `for'

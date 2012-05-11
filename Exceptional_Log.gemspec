@@ -1,14 +1,14 @@
 # -*- encoding: utf-8 -*-
 
 $:.push File.expand_path("../lib", __FILE__)
-require "Exceptionize_Log/version"
+require "Exceptional_Log/version"
 
 Gem::Specification.new do |s|
-  s.name        = "Exceptionize_Log"
-  s.version     = Exceptionize_Log_Version
+  s.name        = "Exceptional_Log"
+  s.version     = Exceptional_Log_Version
   s.authors     = ["da99"]
   s.email       = ["i-hate-spam-45671204@mailinator.com"]
-  s.homepage    = "https://github.com/da99/Exceptionize_Log"
+  s.homepage    = "https://github.com/da99/Exceptional_Log"
   s.summary     = %q{Turn a file into an Exception-like object.}
   s.description = %q{
 

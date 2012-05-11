@@ -7,22 +7,22 @@ describe "Exceptional_Log ruby_glob" do
   }
 
   it "returns an Enumerable" do
-    @e.each_index { |i|
-      @e[i].should.is_a Exceptional_Log
-    }
+    @e.should.respond_to :each_index 
   end
   
   it "turns each log into a Exceptional_Log" do
-    @e.each { |e| e.should.respond_to :[] }
+    @e.each { |e| e.should.is_a Exceptional_Log }
   end
 
-  it "sets key :exception to file basename" do
-    File.file?( File.join("spec/file/" + @e.first[:exception] ) )
-    .should.be == true
+  it "sets exception class to file basename: thin_A.log -> Thin_A" do
+    @files.each_index { |i|
+      @e[i].class.name
+      .should == File.basename(@files[i]).sub('.log', '').split("_").map(&:capitalize).join('_')
+    }
   end
 
-  it "sets key :message to file dirname" do
-    File.file?( File.join(@e.first[:message], @e.first[:exception] ) )
+  it "sets key :message to file path" do
+    File.file?( @e.first.message )
     .should == true
   end
 
