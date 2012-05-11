@@ -1,25 +1,16 @@
 require 'Exceptional_Log/version'
-
+require "Classy_Name"
 
 class Exceptional_Log < RuntimeError
   
   module Class_Methods
     
-    def glob g
-    files = Dir.glob(g)
-    files.map { |f|
+    def convert file
+      f = file
       full_path = File.expand_path(f)
-      excep     = File.basename(f)
       msg       = full_path
 
-      e_name = begin
-                 excep
-                 .sub(  /\.log\z/i,      '' )
-                 .gsub( /[^a-z0-9A]+/i, '_')
-                 .split( "_" )
-                 .map(&:capitalize)
-                 .join('_')
-               end
+      e_name = Classy_Name(File.basename(f).sub( /\.log\z/i, '' ))
       
       k = begin
             unless Object.const_defined?(e_name)
@@ -35,7 +26,6 @@ class Exceptional_Log < RuntimeError
       e.created_at = File.stat(full_path).atime
 
       e
-    }
     end
 
   end # === Class_Methods

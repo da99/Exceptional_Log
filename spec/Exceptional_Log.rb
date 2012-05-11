@@ -1,9 +1,11 @@
 
-describe "Exceptional_Log ruby_glob" do
+describe "Exceptional_Log file_path" do
   
   before { 
-    @e = Exceptional_Log.glob("./spec/file/thin*.log") 
     @files = Dir.glob("./spec/file/thin*.log")
+    @e = @files.map { |f|
+      Exceptional_Log.convert(f)
+    }
   }
 
   it "returns an Enumerable" do
@@ -37,4 +39,5 @@ describe "Exceptional_Log ruby_glob" do
   end
   
 end # === Exceptional_Log ruby_glob
+
 
