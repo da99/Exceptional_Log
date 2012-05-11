@@ -20,6 +20,7 @@ require 'Exceptionize_Log'
 require 'Bacon_Colored'
 require 'pry'
 
+require 'Split_Lines'
 
 
 # ======== Custom code.
