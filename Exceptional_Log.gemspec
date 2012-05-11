@@ -31,4 +31,5 @@ Gem::Specification.new do |s|
   # s.add_runtime_dependency 'rest-client'
   s.add_runtime_dependency 'Split_Lines'
   s.add_runtime_dependency 'Classy_Name'
+  s.add_runtime_dependency 'Backtrace_Array'
 end

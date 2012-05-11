@@ -8,7 +8,10 @@ class Exceptional_Log < RuntimeError
     def convert file
       f = file
       full_path = File.expand_path(f)
+      lines     = Split_Lines(File.read(full_path))
       msg       = full_path
+
+      return nil if lines.empty?
 
       e_name = Classy_Name(File.basename(f).sub( /\.log\z/i, '' ))
       
@@ -22,7 +25,7 @@ class Exceptional_Log < RuntimeError
           end
 
       e = k.new(msg)
-      e.set_backtrace Split_Lines(File.read full_path )
+      e.set_backtrace lines
       e.created_at = File.stat(full_path).atime
 
       e

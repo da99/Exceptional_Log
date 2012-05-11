@@ -8,6 +8,13 @@ describe "Exceptional_Log.convert file_path" do
     }
   }
 
+  it "returns nil if file is empty" do
+    file = "/tmp/my_thin.log"
+    `echo " " > #{file}`
+    Exceptional_Log.convert(file)
+    .should == nil
+  end
+
   it "returns an Enumerable" do
     @e.should.respond_to :each_index 
   end
