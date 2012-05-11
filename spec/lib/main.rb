@@ -16,7 +16,7 @@ $LOAD_PATH.unshift( Gem_Dir + "/lib" )
 
 Bacon.summary_on_exit
 
-require 'Exceptionize_Log'
+require 'Exceptional_Log'
 require 'Bacon_Colored'
 require 'pry'
 

@@ -2,7 +2,7 @@
 Exceptionize\_Log
 ================
 
-A Ruby gem.
+A Ruby gem to turn your log files into exceptions.
 
 Installation
 ------------
@@ -14,7 +14,7 @@ Usage
 
     require "Exceptionize_Log"
     
-    Exceptionize_Log
+    Exceptionize_Log "/my_apps/logs/thin*.log"
 
 
 Run Tests

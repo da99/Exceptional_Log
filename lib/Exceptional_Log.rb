@@ -1,11 +1,12 @@
-require 'Exceptionize_Log/version'
+require 'Exceptional_Log/version'
 
-module Kernel
 
-  private
-
-  def Exceptionize_Log glob
-    files = Dir.glob(glob)
+class Exceptional_Log < RuntimeError
+  
+  module Class_Methods
+    
+    def glob g
+    files = Dir.glob(g)
     files.map { |f|
       full_path = File.expand_path(f)
       excep     = File.basename(f)
@@ -18,6 +19,9 @@ module Kernel
         :created_at => File.stat(full_path).atime
       ]
     }
-  end # === def Exceptionize_Log
+    end
+
+  end # === Class_Methods
   
-end # === Kernel
+  extend Class_Methods
+end # === Exceptional_Log

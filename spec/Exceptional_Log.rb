@@ -1,18 +1,18 @@
 
-describe "Exceptionize_Log ruby_glob" do
+describe "Exceptional_Log ruby_glob" do
   
   before { 
-    @e = Exceptionize_Log("./spec/file/thin*.log") 
+    @e = Exceptional_Log.glob("./spec/file/thin*.log") 
     @files = Dir.glob("./spec/file/thin*.log")
   }
 
   it "returns an Enumerable" do
     @e.each_index { |i|
-      @e[i].should.respond_to :[]
+      @e[i].should.is_a Exceptional_Log
     }
   end
   
-  it "turns each log into a Hash" do
+  it "turns each log into a Exceptional_Log" do
     @e.each { |e| e.should.respond_to :[] }
   end
 
@@ -36,5 +36,5 @@ describe "Exceptionize_Log ruby_glob" do
     .should == File.stat(@files.last).atime
   end
   
-end # === Exceptionize_Log ruby_glob
+end # === Exceptional_Log ruby_glob
 
