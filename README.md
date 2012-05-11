@@ -16,6 +16,11 @@ Usage
     
     Exceptional_Log "/my_apps/logs/thin*.log"
 
+Nginx/HTTP Error Logs
+---------------------
+
+For NGINX error logs (not access logs), try looking at 
+[the Http\_Error\_Log](https://github.com/da99/Http_Error_Log).
 
 Run Tests
 ---------
