@@ -38,6 +38,14 @@ class Exceptional_Log < RuntimeError
       send name
     end
 
+    def to_hash
+      keys = %w{ exception message backtrace created_at }
+      keys.inject(Hash[]) { |memo, k|
+        memo[k.to_sym] = send(k) 
+        memo
+      }
+    end
+    
   end # === Base
   
   extend Class_Methods

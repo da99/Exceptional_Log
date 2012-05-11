@@ -14,7 +14,17 @@ Usage
 
     require "Exceptional_Log"
     
-    Exceptional_Log "/my_apps/logs/thin*.log"
+    e = Exceptional_Log("/my_apps/logs/thin_a.log")
+    
+    e.class      # --> Thin_A 
+    e.message    # --> '/my_apps/logs/thin_a.log'
+    e.backtrace  # --> Array
+    e.exception  # --> self
+    e.created_at # --> File.stat(file).atime
+    e.to_hash    # --> Hash[ :exception => ..., :message => ..., :created_at => ..., :backtrace => ... ]
+
+Each exception is a subclass of `Exceptional_Log` and is named based on the basename of
+the file path. 
 
 Nginx/HTTP Error Logs
 ---------------------

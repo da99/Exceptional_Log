@@ -1,5 +1,5 @@
 
-describe "Exceptional_Log file_path" do
+describe "Exceptional_Log.convert file_path" do
   
   before { 
     @files = Dir.glob("./spec/file/thin*.log")
@@ -40,4 +40,22 @@ describe "Exceptional_Log file_path" do
   
 end # === Exceptional_Log ruby_glob
 
+
+describe "Exceptional#to_hash" do
+  
+  before { 
+    @e = Exceptional_Log.convert(Dir.glob('spec/file/thin*').first)
+    @h = @e.to_hash
+  }
+  
+  %w{ exception message backtrace created_at }.each { |k|
+
+    it "sets :#{k}" do
+      @h[:"#{k}"].should == @e.send(k)
+    end
+    
+  }
+
+
+end # === Exceptional#to_hash
 
