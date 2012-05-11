@@ -30,4 +30,5 @@ Gem::Specification.new do |s|
   # Specify any dependencies here; for example:
   # s.add_runtime_dependency 'rest-client'
   s.add_runtime_dependency 'Split_Lines'
+  s.add_runtime_dependency 'Classy_Name'
 end
