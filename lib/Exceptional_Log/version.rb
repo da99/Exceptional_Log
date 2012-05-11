@@ -1,1 +1,1 @@
-Exceptional_Log_Version = "0.1.0"
+Exceptional_Log_Version = "0.1.1"
